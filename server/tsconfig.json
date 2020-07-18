@@ -9,6 +9,7 @@
     "baseUrl": "./src",
     "paths": {
       "@modules/*": ["modules/*"],
+      "@config/*": ["config/*"],
       "@shared/*": ["shared/*"]
     },
     "esModuleInterop": true,
