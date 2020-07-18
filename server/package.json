@@ -26,8 +26,8 @@
   "scripts": {
     "build": "tsc",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "start": "ts-node ./src/server.ts",
-    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore node_modules ./src/server.ts",
+    "start": "ts-node ./src/shared/infra/http/server.ts",
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules ./src/shared/infra/http/server.ts",
     "test": "jest"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "express-async-errors": "^3.1.1",
     "pg": "^8.3.0",
     "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.3.0",
     "typeorm": "^0.2.25",
     "uuidv4": "^6.2.0"
   }

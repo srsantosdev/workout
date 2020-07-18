@@ -9,6 +9,7 @@ describe('Create User', () => {
   it('should be able to create a new user', async () => {
     const fakeUsersRepository = new FakeUsersRepository();
     const fakeHashProvider = new FakeHashProvider();
+
     const createUser = new CreateUserService(
       fakeUsersRepository,
       fakeHashProvider,
@@ -27,6 +28,7 @@ describe('Create User', () => {
   it('should not be able to create a new user with same username from another', async () => {
     const fakeUsersRepository = new FakeUsersRepository();
     const fakeHashProvider = new FakeHashProvider();
+
     const createUser = new CreateUserService(
       fakeUsersRepository,
       fakeHashProvider,
