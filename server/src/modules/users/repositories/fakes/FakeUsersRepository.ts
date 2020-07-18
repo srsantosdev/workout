@@ -40,4 +40,12 @@ export default class FakeUsersRepository implements IUsersRepository {
 
     this.users.splice(userIndex, 1);
   }
+
+  public async save(user: User): Promise<User> {
+    const findIndex = this.users.findIndex(findUser => findUser.id === user.id);
+
+    this.users[findIndex] = user;
+
+    return user;
+  }
 }

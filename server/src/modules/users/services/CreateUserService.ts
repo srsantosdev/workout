@@ -30,7 +30,6 @@ export default class CreateUserService {
     username,
     occupation,
     password,
-    image_url,
   }: IRequest): Promise<User> {
     const existingUser = await this.usersRepository.findByUsername(username);
 
@@ -45,7 +44,6 @@ export default class CreateUserService {
       username,
       occupation,
       password: hashedPassword,
-      image_url,
     });
 
     return user;

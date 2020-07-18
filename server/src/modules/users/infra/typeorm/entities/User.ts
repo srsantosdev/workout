@@ -21,7 +21,7 @@ export default class User {
   name: string;
 
   @Column()
-  image_url: string;
+  avatar_url: string;
 
   @Column()
   occupation: string;

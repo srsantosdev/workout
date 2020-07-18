@@ -24,6 +24,7 @@
     "prettier"
   ],
   "rules": {
+    "no-return-await": "off",
     "no-useless-return": "off",
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
