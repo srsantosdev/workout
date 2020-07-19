@@ -26,6 +26,9 @@ export default class User {
   @Column()
   occupation: string;
 
+  @Column()
+  manager: boolean;
+
   @CreateDateColumn()
   created_at: Date;
 
