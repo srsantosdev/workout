@@ -14,6 +14,7 @@ interface IRequest {
     password?: string;
     name?: string;
     occupation?: string;
+    manager?: boolean;
   };
 }
 

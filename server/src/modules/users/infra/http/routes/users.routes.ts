@@ -15,12 +15,12 @@ const userRoutes = Router();
 const usersController = new UsersController();
 const userAvatarController = new UserAvatarController();
 
-userRoutes.post('/users', usersController.create);
-userRoutes.delete('/users/:id', usersController.remove);
-userRoutes.put('/users/:id', usersController.update);
+userRoutes.post('/', usersController.create);
+userRoutes.delete('/:id', usersController.remove);
+userRoutes.put('/:id', usersController.update);
 
 userRoutes.patch(
-  '/users/avatar',
+  '/avatar',
   ensureAuthenticate,
   upload.single('avatar'),
   userAvatarController.update,

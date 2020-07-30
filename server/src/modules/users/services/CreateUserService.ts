@@ -12,7 +12,7 @@ interface IRequest {
   password: string;
   name: string;
   occupation: string;
-  image_url?: string;
+  manager?: boolean;
 }
 
 @injectable()
@@ -30,6 +30,7 @@ export default class CreateUserService {
     username,
     occupation,
     password,
+    manager,
   }: IRequest): Promise<User> {
     const existingUser = await this.usersRepository.findByUsername(username);
 
@@ -43,6 +44,7 @@ export default class CreateUserService {
       name,
       username,
       occupation,
+      manager,
       password: hashedPassword,
     });
 

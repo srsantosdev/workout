@@ -13,10 +13,18 @@ export default class FakeUsersRepository implements IUsersRepository {
     occupation,
     password,
     username,
+    manager,
   }: ICreateUserDTO): Promise<User> {
     const user = new User();
 
-    Object.assign(user, { id: uuid(), name, occupation, password, username });
+    Object.assign(user, {
+      id: uuid(),
+      name,
+      occupation,
+      password,
+      username,
+      manager,
+    });
 
     this.users.push(user);
 

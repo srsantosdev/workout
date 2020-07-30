@@ -3,4 +3,5 @@ export default interface ICreateUserDTO {
   password: string;
   name: string;
   occupation: string;
+  manager?: boolean;
 }

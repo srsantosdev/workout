@@ -17,12 +17,14 @@ export default class UsersRepository implements IUsersRepository {
     username,
     password,
     occupation,
+    manager,
   }: ICreateUserDTO): Promise<User> {
     const user = this.ormRepository.create({
       name,
       username,
       password,
       occupation,
+      manager,
     });
 
     await this.ormRepository.save(user);

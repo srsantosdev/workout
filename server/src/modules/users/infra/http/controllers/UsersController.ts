@@ -7,7 +7,7 @@ import RemoveUserService from '@modules/users/services/RemoveUserService';
 
 export default class UsersController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, password, username, occupation } = request.body;
+    const { name, password, username, occupation, manager } = request.body;
 
     const createUser = container.resolve(CreateUserService);
 
@@ -16,6 +16,7 @@ export default class UsersController {
       password,
       username,
       occupation,
+      manager,
     });
 
     return response.json(user);
@@ -23,13 +24,13 @@ export default class UsersController {
 
   public async update(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
-    const { name, password, occupation, username } = request.body;
+    const { name, password, occupation, username, manager } = request.body;
 
     const updateUserService = container.resolve(UpdateUserService);
 
     const user = await updateUserService.execute({
       user_id: id,
-      updatedData: { name, password, occupation, username },
+      updatedData: { name, password, occupation, username, manager },
     });
 
     return response.json(user);
