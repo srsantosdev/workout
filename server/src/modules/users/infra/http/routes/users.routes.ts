@@ -15,9 +15,11 @@ const userRoutes = Router();
 const usersController = new UsersController();
 const userAvatarController = new UserAvatarController();
 
+userRoutes.get('/', usersController.index);
 userRoutes.post('/', usersController.create);
-userRoutes.delete('/:id', usersController.remove);
+userRoutes.get('/:id', usersController.show);
 userRoutes.put('/:id', usersController.update);
+userRoutes.delete('/:id', usersController.remove);
 
 userRoutes.patch(
   '/avatar',
